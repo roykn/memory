@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Memory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="header">
+           
+            <div class="status">404 ...</div>
+            <div class="description">
+                ... means, you reached the end of the internet. <br>
+                But, don't go back. Take a break, stay for a while and play a game! 
+            </div>            
+        </div>                 
+        <div class="board">
+            <tile 
+                v-for="tile in game.board" 
+                v-bind:game="game"
+                v-bind:data="tile"
+                v-bind:back-tile="backTile"
+                @flipped="check"
+            ></tile>
+        </div>
+        <div class="footer">
+            <button @click="initialize">New game</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js"></script>
+</body>
+</html>
